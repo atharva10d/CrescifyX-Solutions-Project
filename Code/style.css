@@ -1,0 +1,120 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:18px 60px;
+background:white;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* LOGO */
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#1c7c74;
+}
+
+/* MENU */
+
+.nav-links{
+list-style:none;
+display:flex;
+gap:35px;
+margin-left:auto;
+margin-right:25px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:#333;
+font-size:16px;
+font-weight:500;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#1c7c74;
+}
+
+.nav-links a.active{
+color:#1c7c74;
+}
+
+/* BOOK NOW BUTTON */
+
+.book-btn{
+background:#1c7c74;
+color:white;
+border:none;
+padding:8px 18px;
+border-radius:25px;
+cursor:pointer;
+font-size:14px;
+font-weight:600;
+}
+
+/* HERO SECTION */
+
+.hero{
+height:90vh;
+background-image:url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+/* HERO CONTENT */
+
+.hero-content{
+max-width:700px;
+}
+
+.tagline{
+background:rgba(255,255,255,0.2);
+padding:6px 16px;
+border-radius:20px;
+display:inline-block;
+font-size:12px;
+margin-bottom:20px;
+}
+
+.hero h1{
+font-size:60px;
+margin-bottom:20px;
+}
+
+.description{
+font-size:18px;
+margin-bottom:30px;
+line-height:1.6;
+}
+
+/* EXPLORE BUTTON */
+
+.explore-btn{
+background:#1c7c74;
+padding:15px 30px;
+border-radius:30px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:0.3s;
+}
+
+.explore-btn:hover{
+background:#155e57;
+}
