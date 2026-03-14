@@ -1,68 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Wanderlust Travel</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🌍 Wanderlust</div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Packages</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <button class="book-btn">Book Now</button>
+        </div>
+    </nav>
 
-<header>
+    <header class="hero">
+        <div class="container">
+            <p class="tagline">Your journey starts here</p>
+            <h1>Explore the World<br>With Us</h1>
+            <p>Discover breathtaking destinations, curated travel packages, and unforgettable experiences crafted just for you.</p>
+            <a href="#" class="explore-btn">Explore Destinations <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </header>
 
-<nav class="navbar">
+    <section class="destinations">
+        <div class="container">
+            <div class="section-header">
+                <p class="subtitle">WHERE TO NEXT?</p>
+                <h2>Top Destinations</h2>
+                <p class="desc">Handpicked locations loved by our travelers from around the globe.</p>
+            </div>
 
-<div class="logo">
-🌍 Wanderlust
-</div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=500&q=80" alt="Bali">
+                        <div class="badge"><i class="fas fa-map-marker-alt"></i> Bali</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Bali — <span>Island of the Gods</span></h3>
+                        <p>Immerse yourself in ancient temples and lush rice terraces.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1527668752968-14dc70a27c95?auto=format&fit=crop&w=500&q=80" alt="Switzerland">
+                        <div class="badge"><i class="fas fa-map-marker-alt"></i> Switzerland</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Switzerland — <span>Alpine Paradise</span></h3>
+                        <p>Experience majestic peaks and charming villages.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=80" alt="Dubai">
+                        <div class="badge"><i class="fas fa-map-marker-alt"></i> Dubai</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Dubai — <span>Luxury & Adventure</span></h3>
+                        <p>From skyscrapers to golden desert dunes.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=500&q=80" alt="Goa">
+                        <div class="badge"><i class="fas fa-map-marker-alt"></i> Goa</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Goa — <span>Beaches & Nightlife</span></h3>
+                        <p>Sun-kissed shores and vibrant night markets.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<ul class="nav-links">
+    <section class="about">
+        <div class="container">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80" alt="Travel">
+                <div class="exp-box"> 
+                    <h4>10+</h4>
+                    <p>Years Experience</p>
+                </div>
+            </div>
 
-<li><a href="#" class="active">Home</a></li>
-<li><a href="#">Destinations</a></li>
-<li><a href="#">Packages</a></li>
-<li><a href="#">About</a></li>
-<li><a href="#">Contact</a></li>
+            <div class="about-text">
+                <p class="section-tag">ABOUT US</p>
+                <h2>We Make Your Travel Dreams <br> Come True</h2>
+                <p>At Wanderlust, we believe travel is more than just visiting new places—it's about creating memories that last a lifetime. Our passionate team curates unforgettable journeys tailored to your unique preferences and budget.</p>
+                <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
 
-</ul>
+    <section class="packages">
+        <div class="container">
+            <div class="section-header">
+                <p class="subtitle">CURATED FOR YOU</p>
+                <h2>Featured Travel Packages</h2>
+                <p class="desc">All-inclusive packages designed for a hassle-free travel experience.</p>
+            </div>
 
-<button class="book-btn">Book Now</button>
+            <div class="package-grid">
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80" alt="Maldives">
+                        <div class="price-badge">$2,499</div>
+                    </div>
+                    <div class="package-info">
+                        <h3>Maldives Luxury Escape</h3>
+                        <div class="meta">
+                            <span><i class="far fa-clock"></i> 5 Days / 4 Nights</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Maldives</span>
+                        </div>
+                        <p>Crystal-clear waters, overwater villas, and world-class dining in the ultimate island paradise.</p>
+                        <button class="contact-btn">Contact Us</button>
+                    </div>
+                </div>
 
-</nav>
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Paris">
+                        <div class="price-badge">$1,899</div>
+                    </div>
+                    <div class="package-info">
+                        <h3>Romantic Paris Getaway</h3>
+                        <div class="meta">
+                            <span><i class="far fa-clock"></i> 4 Days / 3 Nights</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Paris, France</span>
+                        </div>
+                        <p>Stroll the Champs-Élysées, admire the Eiffel Tower, and indulge in authentic French cuisine.</p>
+                        <button class="contact-btn">Contact Us</button>
+                    </div>
+                </div>
 
-</header>
+                <div class="package-card">
+                    <div class="package-img">
+                        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="Japan">
+                        <div class="price-badge">$3,199</div>
+                    </div>
+                    <div class="package-info">
+                        <h3>Japan Cherry Blossom Tour</h3>
+                        <div class="meta">
+                            <span><i class="far fa-clock"></i> 7 Days / 6 Nights</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Tokyo & Kyoto</span>
+                        </div>
+                        <p>Experience the magic of sakura season with guided temple tours, tea ceremonies, and bullet train rides.</p>
+                        <button class="contact-btn">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <p class="subtitle">WHY US</p>
+                <h2>Why Choose Us</h2>
+                <p class="desc">Here's what makes Wanderlust your ideal travel partner.</p>
+            </div>
 
-<!-- HERO SECTION -->
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon-box"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Best Price Guarantee</h3>
+                    <p>We match or beat any comparable price so you always get the best deal on your dream vacation.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-box"><i class="fas fa-compass"></i></div>
+                    <h3>Expert Travel Guides</h3>
+                    <p>Our certified local guides bring each destination to life with insider knowledge and passion.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-box"><i class="fas fa-headset"></i></div>
+                    <h3>24/7 Customer Support</h3>
+                    <p>Day or night, our dedicated support team is just a call away to help with anything you need.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-box"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3>Handpicked Destinations</h3>
+                    <p>Every destination in our portfolio is carefully vetted for quality, safety, and unforgettable experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section class="hero">
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <p class="subtitle">TESTIMONIALS</p>
+                <h2>What Our Travelers Say</h2>
+                <p class="desc">Real stories from real adventurers who trusted us with their journeys.</p>
+            </div>
 
-<div class="hero-content">
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="quote">"Wanderlust made our honeymoon absolutely magical! Every detail was perfectly planned."</p>
+                    <div class="user-info">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Sarah">
+                        <div class="user-details">
+                            <h4>Sarah Mitchell</h4>
+                            <span>New York, USA</span>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
 
-<p class="tagline">YOUR JOURNEY STARTS HERE</p>
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Next Adventure?</h2>
+            <p>Let us plan your perfect trip. Get in touch today and we'll craft an unforgettable journey just for you.</p>
+            <a href="#" class="cta-btn">Contact Us <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
 
-<h1>Explore the World<br>With Us</h1>
-
-<p class="description">
-Discover breathtaking destinations, curated travel packages,
-and unforgettable experiences crafted just for you.
-</p>
-
-<a href="#" class="explore-btn">
-Explore Destinations →
-</a>
-
-</div>
-
-</section>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo"><i class="fas fa-globe"></i> Wanderlust</div>
+                    <p class="footer-about">Crafting unforgettable travel experiences since 2015.</p>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> hello@wanderlust.com</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LEGAL</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Wanderlust Travel Agency. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
-
-</html>>
+</html>
