@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* =========================================
    VARIABLES & RESET
 ========================================= */
@@ -31,12 +31,12 @@
 
 =======
 /* GENERAL RESET */
->>>>>>> 31512d5037d72c92d914150322d250cb770b07dd
+
 * { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
-<<<<<<< HEAD
+
 }
 
 html {
@@ -71,7 +71,7 @@ body {
     width: 90%; 
 }
 
-<<<<<<< HEAD
+
 /* =========================================
    NAVBAR
 ========================================= */
@@ -111,7 +111,7 @@ body {
 }
 
 .logo { 
-<<<<<<< HEAD
+
     font-size: 26px; 
     font-weight: 800; 
     color: var(--white); 
@@ -130,22 +130,20 @@ body {
     display: flex; 
     align-items: center; 
     gap: 10px; 
->>>>>>> 31512d5037d72c92d914150322d250cb770b07dd
 }
 
 .nav-links { 
     display: flex; 
     list-style: none; 
-<<<<<<< HEAD
+
     gap: 35px; 
 =======
     gap: 30px; 
->>>>>>> 31512d5037d72c92d914150322d250cb770b07dd
+
 }
 
 .nav-links a { 
     text-decoration: none; 
-<<<<<<< HEAD
     color: var(--white); 
     font-weight: 500; 
     font-size: 15px;
@@ -920,5 +918,5 @@ section { padding: 120px 0; }
 @media (max-width: 600px) {
     .grid, .package-grid, .features-grid, .testimonials-grid, .footer-grid { grid-template-columns: 1fr; }
     .hero h1 { font-size: 40px; }
->>>>>>> 31512d5037d72c92d914150322d250cb770b07dd
+
 }
