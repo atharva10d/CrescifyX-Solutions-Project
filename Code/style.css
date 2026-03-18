@@ -2,6 +2,18 @@
    VARIABLES & RESET
 ========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo-img {
+    width: 30px;
+    height: 30px;
+}
 
 :root {
     --primary-teal: #1c7c74;
