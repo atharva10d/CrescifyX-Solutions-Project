@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Packages | Wanderlust Travel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* =========================================
+       PACKAGES PAGE SPECIFIC STYLES
+       (Utilizing shared variables from style.css)
+    ========================================= */
+    
+    /* Packages Hero */
+    .packages-hero {
+      height: 50vh;
+      min-height: 400px;
+      background: linear-gradient(rgba(10, 17, 40, 0.6), rgba(10, 17, 40, 0.6)), url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2000&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: var(--white);
+      text-align: center;
+    }
+    .packages-hero h1 { font-size: 55px; font-weight: 800; margin-bottom: 15px; font-family: 'Playfair Display', serif;}
+    .packages-hero p { font-size: 18px; font-weight: 500; opacity: 0.9; max-width: 600px; margin: 0 auto; line-height: 1.6;}
+
+    /* Layout & Container */
+    .packages-page-wrapper {
+        padding: 100px 0;
+        background-color: var(--light-bg);
+    }
+    .packages-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Detailed Package Card */
+    .detailed-package-card {
+      background: var(--white);
+      border-radius: 20px;
+      display: flex;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,0,0,0.03);
+      transition: var(--transition-smooth);
+    }
+    .detailed-package-card:hover { 
+      transform: translateY(-10px); 
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    .card-image { width: 42%; position: relative; overflow: hidden;}
+    .card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease;}
+    .detailed-package-card:hover .card-image img { transform: scale(1.08); }
+
+    .card-content {
+      width: 58%;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-content h2 { font-size: 22px; color: var(--dark-navy); margin-bottom: 10px; font-family: 'Playfair Display', serif;}
+
+    .meta-info {
+      display: flex;
+      gap: 15px;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 25px;
+      font-weight: 500;
+    }
+    .meta-info span i { color: var(--primary-teal); margin-right: 5px;}
+
+    .list-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    .list-section h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .list-section ul { list-style: none; font-size: 14px; color: var(--text-main); }
+    .list-section li { margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+
+    .includes li i { color: #2ecc71; font-size: 13px;}
+    .excludes li i { color: #e74c3c; font-size: 13px;}
+
+    .card-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-top: 20px;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .price-tag { font-size: 12px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;}
+    .price-tag span {
+      display: block;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary-teal);
+      margin-top: 4px;
+      font-family: 'Playfair Display', serif;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .book-pkg-btn {
+      background: var(--dark-navy);
+      color: var(--white);
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      transition: var(--transition-smooth);
+    }
+    .book-pkg-btn:hover { background: var(--primary-teal); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .packages-container { grid-template-columns: 1fr; max-width: 800px;}
+    }
+    @media (max-width: 600px) {
+      .detailed-package-card { flex-direction: column; }
+      .card-image { width: 100%; height: 250px; }
+      .card-content { width: 100%; }
+      .packages-hero h1 { font-size: 42px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+      <div class="container">
+          <a href="index.html" class="logo" style="text-decoration: none;">
+              <i class="fas fa-compass" style="color: var(--primary-teal); font-size: 28px; margin-right: 5px;"></i> Wanderlust
+          </a>
+          <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="destinations.html">Destinations</a></li>
+              <li><a href="packages.html" style="color: var(--primary-teal);">Packages</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="nav-actions">
+              <button class="book-btn">Book Now</button>
+              <button class="menu-toggle" aria-label="Toggle Menu">
+                  <i class="fas fa-bars"></i>
+              </button>
+          </div>
+      </div>
+  </nav>
+
+  <header class="packages-hero">
+    <div class="container">
+        <div class="breadcrumbs fade-up" style="margin-bottom: 20px; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; font-weight: 600;">
+            <a href="index.html" style="color: var(--primary-teal); text-decoration: none;">Home</a> / <span style="color: rgba(255,255,255,0.8);">Packages</span>
+        </div>
+        <h1 class="reveal-text delay-1">Travel Packages</h1>
+        <p class="reveal-text delay-2">Discover meticulously curated travel experiences designed to give you the perfect balance of relaxation and adventure.</p>
+    </div>
+  </header>
+
+  <main class="packages-page-wrapper">
+    <div class="packages-container">
+      
+      <div class="detailed-package-card fade-up">
+        <div class="card-image"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600" alt="Bali"></div>
+        <div class="card-content">
+          <h2>Bali 4N/5D Romantic Getaway</h2>
+          <div class="meta-info">
+            <span><i class="far fa-clock"></i> 5 Days</span>
+            <span><i class="fas fa-map-marker-alt"></i> Bali, Indonesia</span>
+          </div>
+          <div class="list-container">
+            <div class="list-section includes">
+              <h4>Includes</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> 4-Star Hotel</li>
+                <li><i class="fas fa-check"></i> Breakfast</li>
+                <li><i class="fas fa-check"></i> Romantic Dinner</li>
+              </ul>
+            </div>
+            <div class="list-section excludes">
+              <h4>Excludes</h4>
+              <ul><li><i class="fas fa-times"></i> Airfare</li></ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="price-tag">Starting From <span>$899</span></div>
+            <a href="contact.html" class="book-pkg-btn magnetic-btn">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="detailed-package-card fade-up delay-1">
+        <div class="card-image"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800" alt="Swiss Alps Landscape"></div>
+        <div class="card-content">
+          <h2>Swiss Alps Adventure</h2>
+          <div class="meta-info">
+            <span><i class="far fa-clock"></i> 6 Days</span>
+            <span><i class="fas fa-map-marker-alt"></i> Switzerland</span>
+          </div>
+          <div class="list-container">
+            <div class="list-section includes">
+              <h4>Includes</h4>
+              <ul>
+                <li><i class="fas fa-check"></i> Boutique Hotel</li>
+                <li><i class="fas fa-check"></i> Train Passes</li>
+                <li><i class="fas fa-check"></i> Guided Tours</li>
+              </ul>
+            </div>
+            <div class="list-section excludes">
+              <h4>Excludes</h4>
+              <ul><li><i class="fas fa-times"></i> Airfare</li></ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="price-tag">Starting From <span>$2,150</span></div>
+            <a href="contact.html" class="book-pkg-btn magnetic-btn">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="detailed-package-card fade-up">
+        <div class="card-image"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600" alt="Dubai"></div>
+        <div class="card-content">
+          <h2>Dubai Luxury Escape</h2>
+          <div class="meta-info">
+            <span><i class="far fa-clock"></i> 4 Days</span>
+            <span><i class="fas fa-map-marker-alt"></i> Dubai, UAE</span>
+          </div>
+          <div class="list-container">
+            <div class="list-section includes">
+              <h4>Includes</h4>
+              <ul><li><i class="fas fa-check"></i> Burj Khalifa</li><li><i class="fas fa-check"></i> Safari</li><li><i class="fas fa-check"></i> 5-Star Stay</li></ul>
+            </div>
+            <div class="list-section excludes">
+              <h4>Excludes</h4>
+              <ul><li><i class="fas fa-times"></i> Insurance</li></ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="price-tag">Starting From <span>$1,050</span></div>
+            <a href="contact.html" class="book-pkg-btn magnetic-btn">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="detailed-package-card fade-up delay-1">
+        <div class="card-image"><img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600" alt="Maldives"></div>
+        <div class="card-content">
+          <h2>Maldives Overwater Retreat</h2>
+          <div class="meta-info">
+            <span><i class="far fa-clock"></i> 5 Days</span>
+            <span><i class="fas fa-map-marker-alt"></i> Maldives</span>
+          </div>
+          <div class="list-container">
+            <div class="list-section includes">
+              <h4>Includes</h4>
+              <ul><li><i class="fas fa-check"></i> Water Villa</li><li><i class="fas fa-check"></i> Speedboat</li><li><i class="fas fa-check"></i> All Meals</li></ul>
+            </div>
+            <div class="list-section excludes">
+              <h4>Excludes</h4>
+              <ul><li><i class="fas fa-times"></i> Scuba Diving</li></ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="price-tag">Starting From <span>$2,499</span></div>
+            <a href="contact.html" class="book-pkg-btn magnetic-btn">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="detailed-package-card fade-up">
+        <div class="card-image"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600" alt="Paris"></div>
+        <div class="card-content">
+          <h2>Parisian Romance</h2>
+          <div class="meta-info">
+            <span><i class="far fa-clock"></i> 4 Days</span>
+            <span><i class="fas fa-map-marker-alt"></i> Paris, France</span>
+          </div>
+          <div class="list-container">
+            <div class="list-section includes">
+              <h4>Includes</h4>
+              <ul><li><i class="fas fa-check"></i> Eiffel Tower</li><li><i class="fas fa-check"></i> Cruise</li><li><i class="fas fa-check"></i> Breakfast</li></ul>
+            </div>
+            <div class="list-section excludes">
+              <h4>Excludes</h4>
+              <ul><li><i class="fas fa-times"></i> Museum Fee</li></ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="price-tag">Starting From <span>$1,899</span></div>
+            <a href="contact.html" class="book-pkg-btn magnetic-btn">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="detailed-package-card fade-up delay-1">
+        <div class="card-image"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600" alt="Japan"></div>
+        <div class="card-content">
+          <h2>Japan Cherry Blossom</h2>
+          <div class="meta-info">
+            <span><i class="far fa-clock"></i> 8 Days</span>
+            <span><i class="fas fa-map-marker-alt"></i> Tokyo & Kyoto</span>
+          </div>
+          <div class="list-container">
+            <div class="list-section includes">
+              <h4>Includes</h4>
+              <ul><li><i class="fas fa-check"></i> Bullet Train</li><li><i class="fas fa-check"></i> Tours</li><li><i class="fas fa-check"></i> Hotels</li></ul>
+            </div>
+            <div class="list-section excludes">
+              <h4>Excludes</h4>
+              <ul><li><i class="fas fa-times"></i> Visa Fees</li></ul>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="price-tag">Starting From <span>$3,199</span></div>
+            <a href="contact.html" class="book-pkg-btn magnetic-btn">Inquire</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="main-footer" id="contact-footer">
+      <div class="container">
+          <div class="footer-grid">
+              <div class="footer-col">
+                  <a href="index.html" class="footer-logo" style="text-decoration: none; display: inline-block; margin-bottom: 20px;">
+                      <i class="fas fa-compass"></i> Wanderlust
+                  </a>
+                  <p class="footer-about">Crafting unforgettable travel experiences since 2015.</p>
+                  <ul class="contact-info">
+                      <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                      <li><i class="fas fa-envelope"></i> hello@wanderlust.com</li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>COMPANY</h4>
+                  <ul>
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="about.html">Our Story</a></li>
+                      <li><a href="about.html">Team</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>SUPPORT</h4>
+                  <ul>
+                      <li><a href="contact.html">Contact Us</a></li>
+                      <li><a href="contact.html">FAQ</a></li>
+                      <li><a href="contact.html">Help Center</a></li>
+                  </ul>
+              </div>
+              <div class="footer-col">
+                  <h4>LEGAL</h4>
+                  <ul>
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">Terms & Conditions</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="footer-bottom">
+              <p>© 2026 Wanderlust Travel Agency. All rights reserved.</p>
+              <div class="social-links">
+                  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <script src="script.js"></script> 
+</body>
+</html>
